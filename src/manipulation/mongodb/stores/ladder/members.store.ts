@@ -20,12 +20,17 @@ export abstract class MembersStore {
 
     public static async getByName(
         name: string
-    ): Promise<Member> {
+    ): Promise<Member | undefined> {
         let result = await GenericStore.getBy(
             this.storeName,
             { Name: name },
             {}
         ) as Array<Member>;
+
+        if (result.length === 0)
+            return undefined;
+        if (result.length > 1)
+            throw new Error(`Several members have been found for name ${name}`);
 
         return result[0];
     }
