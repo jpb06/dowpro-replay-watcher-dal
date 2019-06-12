@@ -12,6 +12,14 @@ export abstract class MembersStore {
         return result;
     }
 
+    public static async set(
+        member: Member
+    ): Promise<boolean> {
+        let result = await GenericStore.createOrUpdate(this.storeName, { name: member.Name }, member);
+
+        return result;
+    }
+
     public static async getAll(): Promise<Array<Member>> {
         let result = await GenericStore.getAll(this.storeName) as Array<Member>;
 

@@ -5,6 +5,7 @@ export class Game {
     Hash: string;
     Result: GameResult;
     Version: string;
+    PostedToDiscord: boolean;
 }
 
 export class Member {

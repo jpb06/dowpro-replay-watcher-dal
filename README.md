@@ -18,3 +18,4 @@ Code factorization package for dowpro-replays-watcher-api & crevette-bot-ts.
 *  0.0.4 : Fixing typo on Games.Version.
 *  0.0.5 : Add functions expect an object, not an array of objects.
 *  0.0.6 : Adding a generic create function in generic store.
+*  0.0.7 : Adding a set function for members store & a PostedToDiscord boolean to the game type.
