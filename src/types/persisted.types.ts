@@ -17,6 +17,13 @@ export class Member {
     RaceStats: Array<RaceStats>;
 }
 
+export class AuthorizedUser {
+    login: string;
+    password: string;
+    roles: string[];
+    dateGenerated: string;
+}
+
 /* ---------------------------------------------------------------------------------------------------------------
    Subsets
    ---------------------------------------------------------------------------------------------------------------*/
