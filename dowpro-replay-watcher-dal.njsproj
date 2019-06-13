@@ -58,10 +58,16 @@
     <TypeScriptCompile Include="src\exports\types.export.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\manipulation\mongodb\stores\security\authorized.users.store.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\types\persisted.types.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\types\persisted.types.validation.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\util\crypto.util.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
@@ -74,6 +80,8 @@
     <Folder Include="src\manipulation\mongodb\stores\" />
     <Folder Include="src\manipulation\mongodb\stores\ladder\" />
     <Folder Include="src\exports\" />
+    <Folder Include="src\manipulation\mongodb\stores\security\" />
+    <Folder Include="src\util\" />
     <Folder Include="src\types\" />
   </ItemGroup>
   <ItemGroup>
