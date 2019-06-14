@@ -1,20 +1,24 @@
-﻿export abstract class DalConfiguration {
+﻿export interface DalConfig {
+    srvIPAddress: string,
+    mongodbPort: number,
+    mainDb: string,
+    mainDbUsername: string
+    mainDbPassword: string
+}
+
+export abstract class DalConfiguration {
     public static url: string;
     public static database: string;
-
     public static username: string;
     public static password: string;
 
     public static Setup(
-        url: string,
-        database: string,
-        username: string,
-        password: string
+        config: DalConfig
     ): void {
-        this.url = url;
-        this.database = database;
-        this.username = username;
-        this.password = password;
+        this.url = `mongodb://${config.srvIPAddress}:${config.mongodbPort}`;
+        this.database = config.mainDb;
+        this.username = config.mainDbUsername;
+        this.password = config.mainDbPassword;
     }
 
     public static Verify(): void {
