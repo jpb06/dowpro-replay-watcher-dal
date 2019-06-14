@@ -23,3 +23,7 @@ Code factorization package for dowpro-replays-watcher-api & crevette-bot-ts.
 *  0.0.9 : Exporting cryptoutil.
 *  0.1.0 : Oh no! Forgot authorized users store in exports.
 *  0.1.1 : Renaming users store to authorized users.
+*  0.1.2 : Simplifying setup.
+*  0.1.3 : Making it easier to setup the Dal.
+*  0.1.4: Fixing invalid type in config interface.
+*  0.1.5: Fixing typo in members store set function.
