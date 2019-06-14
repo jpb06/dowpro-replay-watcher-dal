@@ -15,7 +15,7 @@ export abstract class MembersStore {
     public static async set(
         member: Member
     ): Promise<boolean> {
-        let result = await GenericStore.createOrUpdate(this.storeName, { name: member.Name }, member);
+        let result = await GenericStore.createOrUpdate(this.storeName, { Name: member.Name }, member);
 
         return result;
     }
