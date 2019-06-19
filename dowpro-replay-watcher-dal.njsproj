@@ -4,6 +4,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>dowpro-replay-watcher-dal</Name>
     <RootNamespace>dowpro-replay-watcher-dal</RootNamespace>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -23,7 +24,7 @@
     <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
     <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
     <EnableTypeScript>true</EnableTypeScript>
-    <StartWebBrowser>false</StartWebBrowser>
+    <StartWebBrowser>False</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,6 +47,9 @@
     <TypeScriptCompile Include="src\exports\manipulation.export.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\manipulation\filesystem\file.system.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\manipulation\mongodb\stores\dal.generic.store.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -59,6 +63,9 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\manipulation\mongodb\stores\security\authorized.users.store.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\manipulation\queuing\queuing.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\types\persisted.types.ts">
@@ -81,6 +88,8 @@
     <Folder Include="src\manipulation\mongodb\stores\ladder\" />
     <Folder Include="src\exports\" />
     <Folder Include="src\manipulation\mongodb\stores\security\" />
+    <Folder Include="src\manipulation\filesystem\" />
+    <Folder Include="src\manipulation\queuing\" />
     <Folder Include="src\util\" />
     <Folder Include="src\types\" />
   </ItemGroup>
