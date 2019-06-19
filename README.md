@@ -27,3 +27,4 @@ Code factorization package for dowpro-replays-watcher-api & crevette-bot-ts.
 *  0.1.3 : Making it easier to setup the Dal.
 *  0.1.4: Fixing invalid type in config interface.
 *  0.1.5: Fixing typo in members store set function.
+*  0.1.6: Adding a filesystem manipulation subset.
