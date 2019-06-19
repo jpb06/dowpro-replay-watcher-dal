@@ -20,7 +20,7 @@ export abstract class GenericStore {
         collectionName: string,
         value: object
     ): Promise<boolean> {
-        DalConfiguration.Verify();
+        DalConfiguration.VerifyDatabaseConfig();
 
         const client = await this.connect();
 
@@ -43,7 +43,7 @@ export abstract class GenericStore {
         term: object,
         value: object
     ): Promise<boolean> {
-        DalConfiguration.Verify();
+        DalConfiguration.VerifyDatabaseConfig();
 
         const client = await this.connect();
 
@@ -70,7 +70,7 @@ export abstract class GenericStore {
         term: object,
         values: Array<object>
     ): Promise<boolean> {
-        DalConfiguration.Verify();
+        DalConfiguration.VerifyDatabaseConfig();
 
         const client = await this.connect();
 
@@ -102,7 +102,7 @@ export abstract class GenericStore {
     public static async getAll(
         collectionName: string
     ): Promise<Array<object>> {
-        DalConfiguration.Verify();
+        DalConfiguration.VerifyDatabaseConfig();
 
         const client = await this.connect();
 
@@ -124,7 +124,7 @@ export abstract class GenericStore {
         sort: object,
         count?: number
     ): Promise<Array<object>> {
-        DalConfiguration.Verify();
+        DalConfiguration.VerifyDatabaseConfig();
 
         const client = await this.connect();
 
@@ -148,7 +148,7 @@ export abstract class GenericStore {
         collectionName: string,
         term: object
     ): Promise<boolean> {
-        DalConfiguration.Verify();
+        DalConfiguration.VerifyDatabaseConfig();
 
         const client = await this.connect();
 

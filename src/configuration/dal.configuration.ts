@@ -2,7 +2,7 @@
     srvIPAddress: string,
     mongodbPort: number,
     mainDb: string,
-    mainDbUsername: string
+    mainDbUsername: string,
     mainDbPassword: string
 }
 
@@ -21,7 +21,7 @@ export abstract class DalConfiguration {
         this.password = config.mainDbPassword;
     }
 
-    public static Verify(): void {
+    public static VerifyDatabaseConfig(): void {
         if (this.url === undefined || this.url.length === 0) {
             throw new Error('No url specified to access mongodb instance');
         }
