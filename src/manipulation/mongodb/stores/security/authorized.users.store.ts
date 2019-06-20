@@ -3,7 +3,7 @@
 import { GenericStore } from './../dal.generic.store';
 import { AuthorizedUser } from './../../../../types/persisted.types';
 
-import * as cryptoUtil from './../../../../util/crypto.util';
+import { Crypto } from './../../../../util/crypto.util';
 
 export abstract class AuthorizedUsersStore {
     public static storeName = 'authorizedusers';
@@ -13,7 +13,7 @@ export abstract class AuthorizedUsersStore {
     ): Promise<string> {
         let password: string = [...Array(8)].map(i => (~~(Math.random() * 36)).toString(36)).join('');
 
-        let hash = await cryptoUtil.hash(password);
+        let hash = await Crypto.hash(password);
 
         await GenericStore.createOrUpdate(
             this.storeName,
