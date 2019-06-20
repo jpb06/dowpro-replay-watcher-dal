@@ -36,6 +36,9 @@
     <TypeScriptCompile Include="src\configuration\dal.configuration.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\exports\util.exports.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\index.ts" />
     <Content Include=".gitignore">
       <SubType>Code</SubType>
@@ -47,7 +50,7 @@
     <TypeScriptCompile Include="src\exports\manipulation.export.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="src\manipulation\filesystem\file.system.ts">
+    <TypeScriptCompile Include="src\util\file.system.util.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\manipulation\mongodb\stores\dal.generic.store.ts">
