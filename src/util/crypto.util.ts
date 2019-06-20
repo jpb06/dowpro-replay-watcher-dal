@@ -1,20 +1,23 @@
 ﻿import * as bcrypt from 'bcrypt';
 
-export async function hash(
-    data: string
-): Promise<string> {
-    let salt = await bcrypt.genSalt(12);
-    let hash = await bcrypt.hash(data, salt);
+export abstract class Crypto {
 
-    return hash;
-}
+    public static async hash(
+        data: string
+    ): Promise<string> {
+        let salt = await bcrypt.genSalt(12);
+        let hash = await bcrypt.hash(data, salt);
 
-export async function verify(
-    data: string,
-    hash: string
-): Promise<boolean> {
+        return hash;
+    }
 
-    let result = await bcrypt.compare(data, hash);
+    public static async verify(
+        data: string,
+        hash: string
+    ): Promise<boolean> {
 
-    return result;
+        let result = await bcrypt.compare(data, hash);
+
+        return result;
+    }
 }
