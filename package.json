@@ -1,6 +1,6 @@
 {
   "name": "dowpro-replay-watcher-dal",
-  "version": "0.1.6",
+  "version": "0.1.9",
   "description": "dowpro-replay-watcher-dal",
   "main": "js/index.js",
   "types": "typings/index.d.ts",
