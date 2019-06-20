@@ -50,3 +50,15 @@ export class RaceStats {
     Wins: number;
     losses: number;
 }
+
+/* ---------------------------------------------------------------------------------------------------------------
+   IPC
+   ---------------------------------------------------------------------------------------------------------------*/
+
+export class QueuedReplay {
+    Hash: string;
+    MapName: string;
+    Duration: number;
+    Version: string;
+    Players: Array<GamePlayer & Member>;
+}
