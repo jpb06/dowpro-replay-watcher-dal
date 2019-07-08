@@ -61,4 +61,5 @@ export class QueuedReplay {
     Duration: number;
     Version: string;
     Players: Array<GamePlayer & Member>;
+    ModName: string;
 }
