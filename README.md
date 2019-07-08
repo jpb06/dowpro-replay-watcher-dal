@@ -31,3 +31,4 @@ Code factorization package for dowpro-replays-watcher-api & crevette-bot-ts.
 *  0.1.7: Oh no! Forgot to export file util.
 *  0.1.8: Rationalizing exports.
 *  0.1.9: Adding IPC types (message broker related).
+*  0.2.0: Adding Mod name property to queue message IPC type.
