@@ -91,7 +91,6 @@
     <Folder Include="src\manipulation\mongodb\stores\ladder\" />
     <Folder Include="src\exports\" />
     <Folder Include="src\manipulation\mongodb\stores\security\" />
-    <Folder Include="src\manipulation\filesystem\" />
     <Folder Include="src\manipulation\queuing\" />
     <Folder Include="src\util\" />
     <Folder Include="src\types\" />
