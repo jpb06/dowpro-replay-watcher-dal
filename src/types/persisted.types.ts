@@ -4,7 +4,6 @@
 export class Game {
     Hash: string;
     Result: GameResult;
-    Version: string;
     PostedToDiscord: boolean;
 }
 
@@ -34,6 +33,8 @@ export class GameResult {
     Duration: number;
     MapName: string;
     Players: Array<GamePlayer>;
+    ModVersion: string;
+    ModName: string;
 }
 
 export class GamePlayer {
@@ -59,7 +60,7 @@ export class QueuedReplay {
     Hash: string;
     MapName: string;
     Duration: number;
-    Version: string;
     Players: Array<GamePlayer & Member>;
+    ModVersion: string;
     ModName: string;
 }

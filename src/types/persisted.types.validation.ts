@@ -12,6 +12,8 @@ export function validateGameResult(obj: any): obj is GameResult {
         typeof obj.TeamsCount !== "number" ||
         typeof obj.Duration !== "number" ||
         typeof obj.MapName !== "string" ||
+        typeof obj.ModVersion !== "string" ||
+        typeof obj.ModName !== "string" ||
         !Array.isArray(obj.Players)
     ) {
         return false;
