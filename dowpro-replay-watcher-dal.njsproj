@@ -68,9 +68,6 @@
     <TypeScriptCompile Include="src\manipulation\mongodb\stores\security\authorized.users.store.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="src\manipulation\queuing\queuing.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="src\types\persisted.types.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -91,7 +88,6 @@
     <Folder Include="src\manipulation\mongodb\stores\ladder\" />
     <Folder Include="src\exports\" />
     <Folder Include="src\manipulation\mongodb\stores\security\" />
-    <Folder Include="src\manipulation\queuing\" />
     <Folder Include="src\util\" />
     <Folder Include="src\types\" />
   </ItemGroup>
