@@ -36,3 +36,5 @@ Code factorization package for dowpro-replays-watcher-api & crevette-bot-ts.
 *  0.2.2: Adding Mod version to the GameResult type.
 *  0.2.3: Rationalizing types (ModVersion & ModName related).
 *  0.2.4: Fixing GameResult validation (forgot ModName property).
+*  0.2.5: Factoring readResult function.
+*  0.2.6: Fixing Util subset.
