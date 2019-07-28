@@ -1,6 +1,8 @@
 ﻿import * as fs from 'fs-extra';
+import { GameResult } from './../types/persisted.types';
+import { validateGameResult } from './../types/persisted.types.validation';
 
-export abstract class FileSystem {
+export abstract class Util {
 
     public static async findRecFile(
         folderPath: string
@@ -15,5 +17,15 @@ export abstract class FileSystem {
         }
 
         return recFiles[0];
+    }
+
+    public static async readResult(
+        filePath: string
+    ): Promise<GameResult | undefined> {
+
+        let raw: any = await fs.readJSON(filePath);
+
+        if (validateGameResult(raw)) return raw as GameResult;
+        return undefined;
     }
 }
