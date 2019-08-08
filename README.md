@@ -38,3 +38,7 @@ Code factorization package for dowpro-replays-watcher-api & crevette-bot-ts.
 *  0.2.4: Fixing GameResult validation (forgot ModName property).
 *  0.2.5: Factoring readResult function.
 *  0.2.6: Fixing Util subset.
+*  0.2.7: Util namespace should be FileSystem.
+*  0.2.8: Factoring business logic code; this is no longer a dal ):
+*  0.2.9: Exporting business types.
+*  0.3.0: Awaiting on mongodb connection close.

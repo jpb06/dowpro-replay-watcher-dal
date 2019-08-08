@@ -1,6 +1,6 @@
 {
   "name": "dowpro-replay-watcher-dal",
-  "version": "0.2.6",
+  "version": "0.3.0",
   "description": "Data access layer for DoWpro ladder",
   "main": "js/index.js",
   "types": "typings/index.d.ts",
@@ -10,14 +10,16 @@
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
     "@types/fs-extra": "^7.0.0",
-    "@types/mongodb": "^3.1.30",
+    "@types/mongodb": "^3.1.32",
     "@types/node": "^8.10.51",
-    "fs-extra": "^8.1.0",
     "gulp": "^4.0.2"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
+    "fs-extra": "^8.1.0",
     "moment": "^2.24.0",
-    "mongodb": "^3.2.7"
+    "mongodb": "^3.2.7",
+    "node-unzipper": "0.0.3",
+    "relic-chunky-parser": "0.0.8"
   }
 }
