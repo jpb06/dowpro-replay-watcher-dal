@@ -1,31 +1,52 @@
 ﻿import * as fs from 'fs-extra';
-import { GameResult } from './../types/persisted.types';
-import { validateGameResult } from './../types/persisted.types.validation';
+import * as crypto from 'crypto';
+import { GameResult } from '../types/persisted.types';
+import { validateGameResult } from '../types/persisted.types.validation';
 
-export abstract class Util {
+export async function findRecFile(
+    folderPath: string
+): Promise<string | undefined> {
 
-    public static async findRecFile(
-        folderPath: string
-    ): Promise<string | undefined> {
+    let files = await fs.readdir(folderPath);
 
-        let files = await fs.readdir(folderPath);
+    let recFiles = files.filter(el => el.endsWith('.rec'));
 
-        let recFiles = files.filter(el => el.endsWith('.rec'));
-
-        if (recFiles.length > 1) {
-            return undefined;
-        }
-
-        return recFiles[0];
-    }
-
-    public static async readResult(
-        filePath: string
-    ): Promise<GameResult | undefined> {
-
-        let raw: any = await fs.readJSON(filePath);
-
-        if (validateGameResult(raw)) return raw as GameResult;
+    if (recFiles.length > 1) {
         return undefined;
     }
+
+    return recFiles[0];
+}
+
+export async function readResult(
+    filePath: string
+): Promise<GameResult | undefined> {
+
+    let raw: any = await fs.readJSON(filePath);
+
+    if (validateGameResult(raw)) return raw as GameResult;
+    return undefined;
+}
+
+export async function fileHash(
+    filePath: string,
+    algorithm = 'sha256'
+): Promise<string | undefined> {
+
+    return new Promise<string>(async (resolve, reject) => {
+        let shasum = crypto.createHash(algorithm);
+        try {
+            let stream = fs.createReadStream(filePath);
+            stream.on('data', (data) => {
+                shasum.update(data);
+            })
+            // making digest
+            stream.on('end', () => {
+                const hash = shasum.digest('hex');
+                return resolve(hash);
+            })
+        } catch (error) {
+            return reject(undefined);
+        }
+    });
 }

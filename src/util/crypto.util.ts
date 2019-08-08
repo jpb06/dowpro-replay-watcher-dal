@@ -1,23 +1,21 @@
 ﻿import * as bcrypt from 'bcrypt';
 
-export abstract class Crypto {
+export async function hash(
+    data: string
+): Promise<string> {
+    let salt = await bcrypt.genSalt(12);
+    let hash = await bcrypt.hash(data, salt);
 
-    public static async hash(
-        data: string
-    ): Promise<string> {
-        let salt = await bcrypt.genSalt(12);
-        let hash = await bcrypt.hash(data, salt);
+    return hash;
+}
 
-        return hash;
-    }
+// used solely in api
+export async function verify(
+    data: string,
+    hash: string
+): Promise<boolean> {
 
-    public static async verify(
-        data: string,
-        hash: string
-    ): Promise<boolean> {
+    let result = await bcrypt.compare(data, hash);
 
-        let result = await bcrypt.compare(data, hash);
-
-        return result;
-    }
+    return result;
 }
