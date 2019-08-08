@@ -33,7 +33,16 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\business\game.validation.logic.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\business\ladder.logic.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\configuration\dal.configuration.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\exports\business.export.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\exports\util.exports.ts">
@@ -68,6 +77,9 @@
     <TypeScriptCompile Include="src\manipulation\mongodb\stores\security\authorized.users.store.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\types\business.types.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\types\persisted.types.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -88,6 +100,7 @@
     <Folder Include="src\manipulation\mongodb\stores\ladder\" />
     <Folder Include="src\exports\" />
     <Folder Include="src\manipulation\mongodb\stores\security\" />
+    <Folder Include="src\business\" />
     <Folder Include="src\util\" />
     <Folder Include="src\types\" />
   </ItemGroup>
