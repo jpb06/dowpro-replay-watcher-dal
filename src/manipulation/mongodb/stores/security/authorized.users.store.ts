@@ -3,7 +3,7 @@
 import { GenericStore } from './../dal.generic.store';
 import { AuthorizedUser } from './../../../../types/persisted.types';
 
-import { Crypto } from './../../../../util/crypto.util';
+import * as Crypto from './../../../../util/crypto.util';
 
 export abstract class AuthorizedUsersStore {
     public static storeName = 'authorizedusers';
