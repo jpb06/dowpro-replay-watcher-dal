@@ -12,6 +12,18 @@ export enum Status {
     InvalidPlayersCount
 }
 
+export class AlreadyExistingGameData {
+    dateAdded: string;
+    mapName: string;
+    mod: string;
+    players: Array<AlreadyExistingGamePlayer>;
+}
+export class AlreadyExistingGamePlayer {
+    name: string;
+    race: string;
+    isAmongWinners: boolean;
+}
+
 export class ArchiveHandlingResult {
     status: Status;
     errorMessage: string;
@@ -21,11 +33,13 @@ export class ArchiveHandlingResult {
     duration: number;
     modName: string;
     modVersion: string;
+    alreadyExistingGameData: AlreadyExistingGameData | undefined;
 
     constructor(
         status: Status,
         message: string,
-        hash: string
+        hash: string, 
+        alreadyExistingGameData?: AlreadyExistingGameData
     ) {
         this.status = status;
         this.errorMessage = message;
@@ -35,5 +49,6 @@ export class ArchiveHandlingResult {
         this.duration = 0;
         this.modName = '';
         this.modVersion = '';
+        this.alreadyExistingGameData = alreadyExistingGameData;
     }
 }

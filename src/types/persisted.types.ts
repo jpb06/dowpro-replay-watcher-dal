@@ -4,7 +4,7 @@
 export class Game {
     Hash: string;
     Result: GameResult;
-    PostedToDiscord: boolean;
+    DateAddedUTC: string;
 }
 
 export class Member {
