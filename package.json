@@ -1,6 +1,6 @@
 {
   "name": "dowpro-replay-watcher-dal",
-  "version": "0.3.3",
+  "version": "0.3.7",
   "description": "Data access layer for DoWpro ladder",
   "main": "js/index.js",
   "types": "typings/index.d.ts",

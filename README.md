@@ -45,3 +45,7 @@ Code factorization package for dowpro-replays-watcher-api & crevette-bot-ts.
 *  0.3.1: Adding file system utils.
 *  0.3.2: Extending the data returned by ReadGameResultArchive (adding RelicChunkyParser.MapData properties).
 *  0.3.3: Basing ReadGameResultArchive return type from QueuedReplay type.
+*  0.3.4: Adding dateAdded to Game type.
+*  0.3.5: In case game was already added to the ladder, ReadGameResultArchive returns information about it.
+*  0.3.6: Fixing a lil issue about ReadGameResultArchive.
+*  0.3.7: Returning players as an array in ReadGameResultArchive...
