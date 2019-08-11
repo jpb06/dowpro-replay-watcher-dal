@@ -42,3 +42,6 @@ Code factorization package for dowpro-replays-watcher-api & crevette-bot-ts.
 *  0.2.8: Factoring business logic code; this is no longer a dal ):
 *  0.2.9: Exporting business types.
 *  0.3.0: Awaiting on mongodb connection close.
+*  0.3.1: Adding file system utils.
+*  0.3.2: Extending the data returned by ReadGameResultArchive (adding RelicChunkyParser.MapData properties).
+*  0.3.3: Basing ReadGameResultArchive return type from QueuedReplay type.
