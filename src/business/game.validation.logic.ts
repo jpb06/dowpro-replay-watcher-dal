@@ -95,8 +95,8 @@ export async function ReadGameResultArchive(
         errorMessage: '',
         playersStats: playersStats,
         hash: hash,
-        mapName: game.Result.MapName,
-        duration: game.Result.Duration,
+        mapName: gameResult.MapName,
+        duration: gameResult.Duration,
         modName: parsedResult.modName,
         modVersion: gameResult.ModVersion
     };
