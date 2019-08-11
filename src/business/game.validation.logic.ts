@@ -1,9 +1,10 @@
 ﻿import * as fs from 'fs-extra';
 import * as Unzip from 'node-unzipper';
 import { RelicChunkyParser, Types as RelicChunkyTypes } from 'relic-chunky-parser';
+import * as moment from 'moment';
 
 import { GameResult, Game } from '../types/persisted.types';
-import { ArchiveHandlingResult, Status } from '../types/business.types';
+import { ArchiveHandlingResult, Status, AlreadyExistingGameData } from '../types/business.types';
 import * as FileSystem from '../util/file.system.util';
 import { GamesStore } from '../manipulation/mongodb/stores/ladder/games.store';
 import { setPlayersStats } from './ladder.logic';
@@ -15,7 +16,6 @@ export async function ReadGameResultArchive(
     gamesFolderPath: string
 
 ): Promise<ArchiveHandlingResult> {
-
     // Unzipping file in the provided temp directory
     let extraction: Unzip.Types.UnzipResult = await Unzip.Manipulation.unzip(archivePath, workingPath);
     if (!extraction.result) return new ArchiveHandlingResult(
@@ -34,9 +34,17 @@ export async function ReadGameResultArchive(
     // Checking if replay exists in db and therefore was already treated
     let exists = await GamesStore.getByHash(hash);
     if (exists) {
+        let alreadyExistingGameData: AlreadyExistingGameData = {
+            dateAdded: exists.DateAddedUTC,
+            mapName: exists.Result.MapName,
+            mod: `${exists.Result.ModName} ${exists.Result.ModVersion}`, 
+            players: exists.Result.Players
+                .map(el => { return { name: el.Name, race: el.Race, isAmongWinners: el.IsAmongWinners } })
+        };
+
         await fs.remove(workingPath);
         return new ArchiveHandlingResult(
-            Status.AlreadyExistinginGamesStore, `${hash}:${uuid} Already exists in db store`, hash);
+            Status.AlreadyExistinginGamesStore, `${hash}:${uuid} Already exists in db store`, hash, alreadyExistingGameData);
     }
 
     let gameFolderPath = `${gamesFolderPath}/${hash}`;
@@ -83,7 +91,7 @@ export async function ReadGameResultArchive(
     let game: Game = {
         Hash: hash,
         Result: gameResult,
-        PostedToDiscord: false
+        DateAddedUTC: moment.utc().toString()
     };
 
     await GamesStore.add(game);
@@ -98,7 +106,8 @@ export async function ReadGameResultArchive(
         mapName: gameResult.MapName,
         duration: gameResult.Duration,
         modName: parsedResult.modName,
-        modVersion: gameResult.ModVersion
+        modVersion: gameResult.ModVersion,
+        alreadyExistingGameData: undefined
     };
 }
 
