@@ -15,7 +15,7 @@
     "gulp": "^4.0.2"
   },
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "fs-extra": "^8.1.0",
     "moment": "^2.24.0",
     "mongodb": "^3.2.7",
